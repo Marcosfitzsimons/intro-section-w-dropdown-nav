@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+
+:root {
+  /* Colors */
+
+    --almostWhite: hsl(0, 0%, 98%);
+    --mediumGray: hsl(0, 0%, 41%);
+    --almostBlack: hsl(0, 0%, 8%);
+
+  /* Font */
+
+    --ff: 'Epilogue', sans-serif;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  transition: .5s;
+}
+
+*,
+*::before, 
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--ff);
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  background-color: var(--almostWhite);
+}
+
+/* ==============
+  Global Styles
+============== */
+
+.container {
+  width: min(90%, 120rem);
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+h1, p {
+    margin: 0;
+  }
+  
+p {
+    font-size: 1.8rem;
+}
+
+/* ==============
+  Utilities
+============== */
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-border {
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ==============
+    Button Styles
+============== */
+
+.btn {
+  width: 14rem;
+  color: var(--almostWhite);
+  background-color: var(--almostBlack);
+  border-radius: 1.5rem;
+  font-family: var(--ff);
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 1em 1.2em;
+  border: 0;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--almostBlack);
+  color: var(--almostBlack);
+}
+
+/* ==============
+    Custom Styles
+============== */
+
+/* ==============
+    Header
+============== */
+
+.logo {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  height: 7rem;
+  align-items: center;
+  padding: 0 1.3em;
+  justify-content: space-between;
+}
+
+.icon-menu {
+  background-image: url(../images/icon-menu.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 2rem;
+  width: 3.3rem;
+  position: relative;
+  bottom: .5rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.header__btn {
+  background-color: transparent;
+  color: var(--mediumGray);
+  border: 2px solid var(--mediumGray);
+  font-weight: 400;
+  font-size: 1.4rem;
+  padding: .7em .2em;
+  width: 12rem;
+  height: auto;
+}
+
+.nav-list {
+  display: flex;
+  gap: 3rem;
+  position: relative;
+  bottom: .5rem;
+}
+
+.arrow-icon {
+ background-image: url(../images/icon-arrow-down.svg);
+ background-position: center center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 1rem;
+ height: .6rem;
+ cursor: pointer;
+}
+
+.nav-list-item--mod {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  position: relative;
+}
+
+
+.company-list__item {
+  width: 80%;
+}
+
+.features-list__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 9.5rem;
+}
+
+.features-list__item img {
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+.features-list__item p, .company-list__item {
+  font-size: 1.5rem;
+}
+
+.features-list__text {
+  padding-top: .3rem;
+}
+
+.header a {
+  color: var(--mediumGray);
+  transition: .2s;
+ }
+
+.header a:hover {
+   color: var(--almostBlack);
+ }
+
+/* ==============
+    Active States
+============== */
+
+.icon-menu.active {
+  background-image: url(../images/icon-close-menu.svg);
+  width: 2.6rem;
+  height: 2.6rem;
+  cursor: pointer;
+}
+
+.arrow-icon.active {
+  background-image: url(../images/icon-arrow-up.svg);
+}
+
+.features-list.active {
+  position: absolute;
+  top: 3.3rem;
+  right: -2rem;
+  color: var(--mediumGray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 15rem;
+  z-index: 333;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0px 10px 22px 10px rgba(0,0,0,0.1);
+}
+
+.company-list.active {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 3.3rem;
+  color: var(--mediumGray);
+  gap: 1rem;
+  box-shadow: 0px 10px 22px 10px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 12rem;
+  align-items: center;
+}
+
+@media (max-width: 780px) {
+
+  .features-list.active {
+    left: -1rem;
+    top: 3rem;
+    background-color: white;
+    box-shadow: none;
+    z-index: 2222;
+  }
+
+  .company-list.active {
+    background-color: white;
+    box-shadow: none;
+    gap: 2rem;
+    top: 2.5rem;
+    left: -1rem;
+  }
+
+  .login-container.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  
+  .header__btn.active {
+    width: 80%;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+  }
+  .nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100vh;
+    background-color: white;
+  }
+  
+  .nav-list.active {
+    flex-direction: column;
+    padding-top: 6rem;
+    padding-left: 3rem;
+  }
+}
+
+/* ==============
+    Main
+============== */
+
+.main {
+  text-align: center;
+}
+
+.img-container {
+  margin: 1em 0 3em 0;
+  background-image: url(../images/image-hero-mobile.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40vh;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__title {
+  font-size: 3.5rem;
+}
+
+.main__text {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  width: 95%;
+  color: var(--mediumGray);
+}
+
+.companies-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: .8rem;
+  margin: 2em 0;
+}
+
+.main__company {
+  width: auto;
+  height: 1.7rem;
+  cursor: pointer;
+}
+
+.main__company--mod {
+  height: 2.5rem;
+  width: auto;
+  position: relative;
+  bottom: .3rem;
+}
+
+@media (min-width: 780px) {
+ .nav, .login-container, .nav-list {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+ }
+ .nav {
+    justify-content: space-between;
+    width: 100%;
+ }
+ .nav-list {
+   gap: 5rem;
+ }
+ .left-side-container {
+   display: flex;
+   align-items: center;
+   gap: 4rem;
+   width: 100%;
+ }
+
+  .login-container {
+    position: relative;
+    bottom: .5rem;
+  }
+
+ .icon-menu {
+   display: none;
+ }
+
+ .nav-list-item--mod:hover {
+   color: var(--almostBlack);
+   cursor: pointer;
+ }
+
+ .login-container {
+   display: flex;
+   gap: 3rem;
+ }
+
+ .main {
+   display: flex;
+   justify-content: space-around;
+   height: 80vh;
+   max-width: 85%;
+   margin: 0 auto;
+ }
+
+ .img-container {
+  order: 2;
+  width: 33%;
+  background-image: url(../images/image-hero-desktop.png);
+  height: 100%;
+ }
+
+ .hero-img {
+   height: 100%;
+ }
+
+ .info-container {
+   width: 44%;
+   align-items: flex-start;
+   height: 100%;
+   gap: 4rem;
+ }
+ 
+ .main__title, .main__text {
+  text-align: start;
+ }
+}
+
+@media (min-width: 1200px) {
+ .main__title {
+    font-size: 8.2rem;
+    padding-right: 4em;
+    width: 87rem;
+ }
+ .main__text {
+   font-size: 2.2rem;
+   width: 74%;
+   line-height: 3.5rem;
+ }
+ .main__btn {
+   font-size: 1.8rem;
+   width: 18rem;
+   height: 6.2rem;
+ }
+ .info-container {
+  justify-content: flex-end;
+ }
+ .companies-container {
+   justify-content: flex-start;
+   gap: 4rem;
+   margin: 4em 0 0 0;
+ }
+ .main__company {
+   height: 2.5rem;
+ }
+ .main__company--mod {
+   bottom: 0;
+   height: 3rem;
+ }
+ .header {
+   padding: 0 5rem;
+ } 
+ .img-container {
+   margin: 0;
+ }
+}
+
+/* 
+    atributte selector for navegation icons: 
+    a[atributte=""]::after {
+      content: url('url');
+      display: inline-block;
+    }
+    
+    another example:
+    a[href="..."] {}
+*/

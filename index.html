@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Intro Section with dropdown Nav</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header class="header">
+      
+      <div class="left-side-container">
+        <div class="logo-container">
+          <img src="images/logo.svg" alt="logo" class="logo">
+        </div>
+
+        <nav class="nav hidden">
+          <ul class="nav-list">
+            <li class="nav-list-item nav-list-item--mod features-drop">
+              <a href="#" class="nav-toggle">Features</a>
+              <div class="arrow-icon arrow-icon-features"></div>
+              <ul class="features-list hidden">
+                  <li class="features-list__item">
+                    <img src="images/icon-todo.svg" alt="#">
+                    <p class="features-list__text">Todo List</p>
+                  </li>
+                  <li class="features-list__item">
+                    <img src="images/icon-calendar.svg" alt="#">
+                    <p class="features-list__text">Calendar</p>
+                  </li>
+                  <li class="features-list__item">
+                    <img src="images/icon-reminders.svg" alt="#">
+                    <p class="features-list__text">Reminder</p>
+                  </li>
+                  <li class="features-list__item">
+                    <img src="images/icon-planning.svg" alt="#">
+                    <p class="features-list__text">Planning</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="nav-list-item nav-list-item--mod company-drop">
+              <a href="#" class="nav-toggle">Company</a>
+              <div class="arrow-icon arrow-icon-company"></div>
+              <ul class="company-list hidden">
+                <li class="company-list__item">History</li>
+                <li class="company-list__item">Our Team</li>
+                <li class="company-list__item">Blog</li>
+              </ul>
+            </li>
+            <li class="nav-list-item">
+              <a href="#">Careers</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="#">About</a>
+            </li>
+          </ul>
+          <div class="login-container hidden">
+            <a href="#" class="header__login">Login</a>
+            <button class="btn header__btn">Register</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="icon-menu"></div>
+      
+    </header>
+
+    <main class="main">
+
+      <section class="img-container">
+      </section>
+
+      <div class="info-container">
+
+        <h1 class="main__title">Make remote work</h1>
+
+        <p class="main__text">Get your team in sync, no matter your location.
+        Streamline processes, create team rituals, and watch productivity soar.</p>
+
+        <button class="btn main__btn">Learn more</button>
+
+        <div class="companies-container">
+          <img src="images/client-databiz.svg" alt="databiz" class="main__company">
+          <img src="images/client-audiophile.svg" alt="audiophile" class="main__company main__company--mod">
+          <img src="images/client-meet.svg" alt="meet" class="main__company">
+          <img src="images/client-maker.svg" alt="maker" class="main__company">
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+  
+</body>
+</html>
